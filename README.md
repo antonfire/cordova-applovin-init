@@ -1,16 +1,15 @@
-# cordova-camera-access
-Simple cordova plugin for access check to the camera
+# cordova-push-enabled
+Simple cordova plugin for access check if push notifications are enabled
 
 # Usage
 
 ```javascript
-$window.plugins.cameraAccess.checkAccess(
+$window.plugins.pushEnabled.checkStatus(
   function() {
-    // Go ahead and access the camera
+    // Go ahead and perform push enabled code.
   },
   function() {
-    // Inform the user that he has to give permission for access.
-    // Ideally, ask for permission and try again.
+    // Inform the user that he has to give permission for push. Or perform push disabled code.
   }
 );
 ```
