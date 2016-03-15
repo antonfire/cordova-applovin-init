@@ -9,7 +9,7 @@ $window.plugins.pushEnabled.checkStatus(
     // Go ahead and perform push enabled code.
   },
   function() {
-    // Inform the user that he has to give permission for push. Or perform push disabled code.
+    // Inform the user that they have to give permission for push. Or perform push disabled code.
   }
 );
 ```
