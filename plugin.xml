@@ -2,28 +2,28 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
-           id="com.antOnFire.camera-access"
+           id="com.antOnFire.push-enabled"
       version="0.1">
 
-    <name>Check access to camera on a device</name>
-    <description>Camera access plugin for cordova by antOnFire</description>
+    <name>Check if push enabled on a device</name>
+    <description>Push status plugin for cordova by antOnFire</description>
     <license>MIT</license>
-    <keywords>camera, access</keywords>
+    <keywords>push, access</keywords>
 
-    <js-module src="www/CameraAccess.js" name="CameraAccess">
-      <clobbers target="CameraAccess" />
+    <js-module src="www/PushEnabled.js" name="PushEnabled">
+      <clobbers target="PushEnabled" />
     </js-module>
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="CameraAccess">
-                <param name="ios-package" value="CameraAccess" />
+            <feature name="PushEnabled">
+                <param name="ios-package" value="PushEnabled" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/CameraAccess.h" />
-        <source-file src="src/ios/CameraAccess.m" />
+        <header-file src="src/ios/PushEnabled.h" />
+        <source-file src="src/ios/PushEnabled.m" />
     </platform>
 
 </plugin>
