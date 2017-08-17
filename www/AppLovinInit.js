@@ -4,7 +4,7 @@
  * Developed by antonfire
  */
 
-var PushEnabled = function() {
+var AppLovinInit = function() {
 
 };
 
@@ -12,7 +12,7 @@ var PushEnabled = function() {
 *	success - success callback
 *	fail - error callback
 */
-PushEnabled.prototype.checkStatus = function(success, fail) {
+AppLovinInit.prototype.init = function(success, fail) {
   if (device.platform.toLowerCase() != 'ios') {
     success();
     return;
@@ -23,9 +23,9 @@ if(!window.plugins) {
     window.plugins = {};
 }
 if (!window.plugins.pushEnabled) {
-    window.plugins.pushEnabled = new PushEnabled();
+    window.plugins.AppLovinInit = new AppLovinInit();
 }
 
 if (typeof module != 'undefined' && module.exports) {
-  module.exports = PushEnabled;
+  module.exports = AppLovinInit;
 }
