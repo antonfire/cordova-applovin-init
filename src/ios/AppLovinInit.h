@@ -1,13 +1,13 @@
 //
-//  PushEnabled.h
+//  AppLovinInit.h
 //
 
 #import <Cordova/CDVPlugin.h>
 #import <Foundation/Foundation.h>
 
-@interface PushEnabled : CDVPlugin
+@interface AppLovinInit : CDVPlugin
 
 @property (copy)   NSString* callbackId;
 
-- (void) checkStatus:(CDVInvokedUrlCommand *)command;
+- (void) init:(CDVInvokedUrlCommand *)command;
 @end
