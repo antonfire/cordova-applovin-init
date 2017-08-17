@@ -4,6 +4,7 @@
 
 #import <Cordova/CDVPlugin.h>
 #import <Foundation/Foundation.h>
+#import <AppLovinSDK/AppLovinSDK.h>
 
 @interface AppLovinInit : CDVPlugin
 
