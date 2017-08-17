@@ -1,52 +1,23 @@
 //
-//  PushEnabled.m
+//  AppLovinInit.m
 //
 
-#import "PushEnabled.h"
+#import "AppLovinInit.h"
 
-@implementation PushEnabled
+@implementation AppLovinInit
 
-@synthesize callbackId;
+- (void)init
+{
 
-- (void) checkStatus:(CDVInvokedUrlCommand *)command {
-
-    // Check for status
-
-    CDVPluginResult* result = nil;
-
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
-        if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
-        {
-
-            if ([[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {
-                NSLog(@"Push notifications enabled");
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Push enabled"];
-                [self invokeCallback:command withResult:result];
-            }
-            else {
-                NSLog(@"Push notifications disabled");
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Push disabled"];
-                [self invokeCallback:command withResult:result];
-            }
-        }else{
-
-        }
-    }else{
-        UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-        if (types & UIRemoteNotificationTypeAlert)
-        {
-            NSLog(@"Push notifications enabled");
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Push enabled"];
-            [self invokeCallback:command withResult:result];
-        }else{
-
-        }
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
 
 }
 
-- (void) invokeCallback:(CDVInvokedUrlCommand *)command withResult:(CDVPluginResult *)result {
-    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+- (void)finishLaunching:(NSNotification *)notification
+{
+    // Put here the code that should be on the AppDelegate.m
+    [ALSdk initializeSdk];
+    
 }
 
 @end
