@@ -2,28 +2,29 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
-           id="com.antOnFire.push-enabled"
+           id="com.antOnFire.applovin-init"
       version="0.1">
 
-    <name>Check if push enabled on a device</name>
-    <description>Push status plugin for cordova by antOnFire</description>
+    <name>Init Applovin for conversions</name>
+    <description>Init Applovin for conversions plugin for cordova by antOnFire</description>
     <license>MIT</license>
-    <keywords>push, access</keywords>
+    <keywords>applovin, init</keywords>
 
-    <js-module src="www/PushEnabled.js" name="PushEnabled">
-      <clobbers target="PushEnabled" />
+    <js-module src="www/AppLovinInit.js" name="AppLovinInit">
+      <clobbers target="AppLovinInit" />
     </js-module>
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="PushEnabled">
-                <param name="ios-package" value="PushEnabled" />
+            <feature name="AppLovinInit">
+                <param name="ios-package" value="AppLovinInit" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/PushEnabled.h" />
-        <source-file src="src/ios/PushEnabled.m" />
+        <header-file src="src/ios/AppLovinInit.h" />
+        <source-file src="src/ios/AppLovinInit.m" />
     </platform>
 
 </plugin>
