@@ -17,7 +17,7 @@ AppLovinInit.prototype.init = function(success, fail) {
     success();
     return;
   }
-  cordova.exec(success, fail, "PushEnabled", "checkStatus");
+  cordova.exec(success, fail, "PushEnabled", "init");
 };
 if(!window.plugins) {
     window.plugins = {};
