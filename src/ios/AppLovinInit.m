@@ -16,6 +16,7 @@
 - (void)finishLaunching:(NSNotification *)notification
 {
     // Put here the code that should be on the AppDelegate.m
+
     [ALSdk initializeSdk];
     
 }
